@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width shrink-to-fit=no initial-scale=1">
+    {% if title %}
+    <title>CODEHUB -> {{title}}</title>
+    {% else %}
+    <title>CODEHUB</title>
+    {% endif %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">CODE HUB</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Trending</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Forum</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">Choose Course</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Django</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Machine Learning</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Artificial Intelligence</a>
+          </div>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+      </li>
+    </ul>
+  </div>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+                <h4><small>RECENT POSTS</small></h4>
+                {% block content %}
+                    {% for post in Articles %}
+                        <div class="card mb-2" style="width:40rem;">
+                            <div class="card-body">
+                                <h4><a class="card-title" href="#">{{post.title}}</a></h4> <hr>{{post.date}} by <a href="#">{{post.author}}</a>
+                                <p class="card-text">{{post.body}}</p><hr>
+                                <a href="#">Continue...</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endblock %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container">
+                <h5><small>CODE HUB'S SIDEBAR</small></h5>
+                <div class="card mt-2" style="width:25rem;">
+                    <div class="card-body">
+                        <ul class="card-text">
+                            <li>Calender</li>
+                            <li>Event</li>
+                            <li>Contact Us</li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+    <!--Footer-->
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+             <div class="col-md-4">
+                <div class="card mr-2" style="width:25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome to CODE HUB</h5>
+                        <p class="card-text">You are welcome to CODE HUB, the website for programming gurus. Subscribe to our newsletter to be a part of this awesome journey. You can also post your views in our community forum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mr-2" style="width:25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">CODE HUB</h5>
+                        <ul class="card-text">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Advertise with us...</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <h4>Newsletter</h4>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control" type="text" placeholder="Enter Your Email">
+                <button class="btn btn-success" type="submit">Subscribe</button>
+              </form>
+            </div>
+        </div>
+        <div class="w-100 text-center container-fluid bg-light">
+            <p>Creator  D.T. KUMAGA</p> &copy; 2021. All rights reserved</p>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+</body>
+</html>
