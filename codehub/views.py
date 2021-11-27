@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Articles
 
 
@@ -9,3 +9,6 @@ class ArticlesListView(ListView):
     context_object_name = 'Articles'
     ordering = ['-date']
 
+
+class ArticlesDetailView(DetailView):
+    model = Articles

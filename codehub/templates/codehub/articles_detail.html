@@ -1,0 +1,11 @@
+{% extends "codehub/base.html" %}
+
+{% block content %}
+    <div class="card mb-2" style="width:40rem;">
+        <div class="card-body">
+            <h4 class="card-title">{{object.title}}</h4> <hr>
+            <small>{{object.date}}</small> by <a href="#">{{object.author}}</a>
+            <p class="card-text">{{object.body}}</p>
+        </div>
+    </div>
+{% endblock %}

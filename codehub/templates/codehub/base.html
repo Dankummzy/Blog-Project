@@ -28,7 +28,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="{% url 'Home' %}">Blog</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Trending</a>
@@ -68,9 +68,9 @@
                     {% for post in Articles %}
                         <div class="card mb-2" style="width:40rem;">
                             <div class="card-body">
-                                <h4><a class="card-title" href="#">{{post.title}}</a></h4> <hr>{{post.date}} by <a href="#">{{post.author}}</a>
+                                <h4><a class="card-title" href="{% url 'Detail' post.id %}">{{post.title}}</a></h4> <hr>{{post.date}} by <a href="#">{{post.author}}</a>
                                 <p class="card-text">{{post.body}}</p><hr>
-                                <a href="#">Continue...</a>
+                                <a href="{% url 'Detail' post.id %}">Continue...</a>
                             </div>
                         </div>
                     {% endfor %}
@@ -128,7 +128,7 @@
               </form>
             </div>
         </div>
-        <div class="w-100 text-center container-fluid bg-light">
+        <div class="text-center container-fluid bg-light">
             <p>Created By  D.T. KUMAGA</p> &copy; 2021. All rights reserved</p>
         </div>
     </div>
